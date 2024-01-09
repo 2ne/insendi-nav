@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  class="accent-primary bg-neutral-175 min-h-screen font-light underline-offset-4 decoration-1"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                DEFAULT: "hsl(var(--primary) / <alpha-value>)",
+                light: "hsl(var(--primary-light) / <alpha-value>)",
+                lightest: "hsl(var(--primary-lightest) / <alpha-value>)",
+                dark: "hsl(var(--primary-dark) / <alpha-value>)",
+                darkest: "hsl(var(--primary-darkest) / <alpha-value>)"
+              },
+              neutral: {
+                75: "#f8f8f8",
+                175: "#ebebeb"
+              }
+            },
+            fontFamily: {
+              sans: ["roboto", "sans-serif"]
+            }
+          },
+          animation: {
+            popover: "popover 175ms cubic-bezier(0.4, 0, 0.2, 1)",
+            sidebar: "sidebar 175ms cubic-bezier(0.4, 0, 0.2, 1)",
+            modal: "modal 175ms cubic-bezier(0.4, 0, 0.2, 1)",
+            modalFade: "modalFade 175ms cubic-bezier(0.4, 0, 0.2, 1)"
+          },
+          keyframes: {
+            popover: {
+              "0%": {
+                opacity: "0",
+                transform: "scale(95%)"
+              },
+              "100%": {
+                opacity: "1",
+                transform: "scale(100%)"
+              }
+            },
+            sidebar: {
+              "0%": {
+                transform: "translateX(5%)"
+              },
+              "100%": {
+                transform: "translateX(0%)"
+              }
+            },
+            modal: {
+              "0%": {
+                opacity: "0",
+                transform: "scale(95%) translateY(5%)"
+              },
+              "100%": {
+                opacity: "1",
+                transform: "scale(100%) translateY(0%)"
+              }
+            },
+            modalFade: {
+              "0%": {
+                opacity: "0"
+              },
+              "100%": {
+                opacity: "1"
+              }
+            }
+          }
+        },
+        future: {
+          hoverOnlyWhenSupported: true
+        }
+      };
+    </script>
+    <title>React App</title>
+  </head>
+
+  <body class="pb-14 sm:pb-0">
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+</html>
